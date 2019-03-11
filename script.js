@@ -39,7 +39,7 @@ const bar = d3.select('#chart')
        return "translate(0, " + i * barHeight + ")"
     });//this transform and translate is needed to get one bar and loop it through all data
 
-//this is to create the drop down for the buildings picture in "calibrated energy model"
+
 const thermalBlock = [
     {space: "Conditioning Systems", href: "https://elementa.nyc/projects/yale-berkeley-college/img/9_ZoneDiagrams_190205_Conditioning_Systems-01.jpg"}, 
     {space: "Program", href: "https://elementa.nyc/projects/yale-berkeley-college/img/ZoneDiagrams_190205_Program-01.jpg"},
@@ -47,7 +47,7 @@ const thermalBlock = [
     {space: "Bedrooms", href: "https://elementa.nyc/projects/yale-berkeley-college/img/0_ZoneDiagrams_190205_Bedroom-01.jpg"},
     {space: "Cafe and Dining", href: "https://elementa.nyc/projects/yale-berkeley-college/img/1_ZoneDiagrams_190205_CafeDining-01.jpg"}
     ]   
-
+//this is to create the drop down for the buildings picture in "calibrated energy model"
 d3.select('#thermal-block')
     .append("select")//this is the select from html when wanting to start creating a dropdown
     .selectAll("option")//this is the individual options within the <select></select>. for all option, attach on the data below?
@@ -61,7 +61,11 @@ d3.select('#thermal-block')
         return d.space;
     });
 
+//this is to show the picture of the spaces for the thermal energy model
 
+d3.select("#building-pic")
+    .append("img")
+    .attr('src', thermalBlock[0].href);
 
 
 const data0 = [
