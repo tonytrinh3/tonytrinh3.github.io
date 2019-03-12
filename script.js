@@ -40,7 +40,7 @@ const bar = d3.select('#chart')
     });//this transform and translate is needed to get one bar and loop it through all data
 
 
-const thermalBlock = [
+const buildings = [
     {space: "Conditioning Systems", href: "https://elementa.nyc/projects/yale-berkeley-college/img/9_ZoneDiagrams_190205_Conditioning_Systems-01.jpg"}, 
     {space: "Program", href: "https://elementa.nyc/projects/yale-berkeley-college/img/ZoneDiagrams_190205_Program-01.jpg"},
     {space: "Envelope", href: "https://elementa.nyc/projects/yale-berkeley-college/img/00_ZoneDiagrams_190205_Envelope-01.jpg"},
@@ -48,10 +48,13 @@ const thermalBlock = [
     {space: "Cafe and Dining", href: "https://elementa.nyc/projects/yale-berkeley-college/img/1_ZoneDiagrams_190205_CafeDining-01.jpg"}
     ]   
 //this is to create the drop down for the buildings picture in "calibrated energy model"
-d3.select('#thermal-block')
+
+const buildingMenu = d3.select('#thermal-block');
+
+buildingMenu
     .append("select")//this is the select from html when wanting to start creating a dropdown
     .selectAll("option")//this is the individual options within the <select></select>. for all option, attach on the data below?
-    .data(thermalBlock)//data associated with each option
+    .data(buildings)//data associated with each option
     .enter() //this starts the loop
     .append("option") // loop each option and add on to selection
     .attr("value", function(d){ //add on value (html standard) on to each option
@@ -61,11 +64,47 @@ d3.select('#thermal-block')
         return d.space;
     });
 
-//this is to show the picture of the spaces for the thermal energy model
-
-d3.select("#building-pic")
+//this is to show the picture of the spaces for the thermal energy model - default pic with page loads
+let buildingPic = d3.select("#building-pic")
     .append("img")
-    .attr('src', thermalBlock[0].href);
+    .attr('src', buildings[0].href);
+
+
+//updates the building picture
+let updateBuildingPic = function(building){
+    //this gives back the data of "buildings" variable based on what user chose
+    const selectBuilding = buildings.filter(function(d){
+        return d.space == building;
+    })
+
+
+    //this overwrites the default picture with a new href
+    buildingPic
+    .attr('src', selectBuilding[0].href);
+
+}
+
+//already has d3 selected...
+//to update the building picture 
+buildingMenu.on('change', function(){
+
+    //get the value of the building that user chose
+    const selectedBuilding = d3.select(this)
+        .select('select')
+        .property('value');
+
+    //pass the selected value to update picture of building
+    updateBuildingPic(selectedBuilding);
+
+
+})
+
+
+
+
+
+
+
 
 
 const data0 = [
