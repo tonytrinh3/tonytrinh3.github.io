@@ -45,7 +45,14 @@ const buildings = [
     {space: "Program", href: "https://elementa.nyc/projects/yale-berkeley-college/img/ZoneDiagrams_190205_Program-01.jpg"},
     {space: "Envelope", href: "https://elementa.nyc/projects/yale-berkeley-college/img/00_ZoneDiagrams_190205_Envelope-01.jpg"},
     {space: "Bedrooms", href: "https://elementa.nyc/projects/yale-berkeley-college/img/0_ZoneDiagrams_190205_Bedroom-01.jpg"},
-    {space: "Cafe and Dining", href: "https://elementa.nyc/projects/yale-berkeley-college/img/1_ZoneDiagrams_190205_CafeDining-01.jpg"}
+    {space: "Cafe and Dining", href: "https://elementa.nyc/projects/yale-berkeley-college/img/1_ZoneDiagrams_190205_CafeDining-01.jpg"},
+    {space: "Circulation", href: "https://elementa.nyc/projects/yale-berkeley-college/img/2_ZoneDiagrams_190205_Circulation-01.jpg"}, 
+    {space: "Fitness", href: "https://elementa.nyc/projects/yale-berkeley-college/img/3_ZoneDiagrams_190205_Fitness-01.jpg"},
+    {space: "Food Prep", href: "https://elementa.nyc/projects/yale-berkeley-college/img/4_ZoneDiagrams_190205_FoodPrep-01.jpg"},
+    {space: "Student Activity", href: "https://elementa.nyc/projects/yale-berkeley-college/img/5_ZoneDiagrams_190205_LibraryStudyLounge-01.jpg"},
+    {space: "Back of House", href: "https://elementa.nyc/projects/yale-berkeley-college/img/6_ZoneDiagrams_190205_BOH-01.jpg"},
+    {space: "Office", href: "https://elementa.nyc/projects/yale-berkeley-college/img/7_ZoneDiagrams_190205_Office-01.jpg"},
+    {space: "Restrooms", href: "https://elementa.nyc/projects/yale-berkeley-college/img/8_ZoneDiagrams_190205_Restrooms-01.jpg"}
     ]   
 //this is to create the drop down for the buildings picture in "calibrated energy model"
 
